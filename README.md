@@ -1,14 +1,6 @@
-# mono-rele2
+# mcp-kit
 
 pnpm + Turborepo 기반 모노레포. 각 패키지는 semantic-release를 통해 독립적으로 npm에 배포됩니다.
-
-## 패키지
-
-| 패키지 | 버전 | 설명 |
-|--------|------|------|
-| [`@julong/mono-rele2-common`](./packages/common) | [![npm](https://img.shields.io/npm/v/@julong/mono-rele2-common)](https://www.npmjs.com/package/@julong/mono-rele2-common) | 공유 타입 · MCP 팩토리 |
-| [`@julong/mono-rele2-core`](./packages/core) | [![npm](https://img.shields.io/npm/v/@julong/mono-rele2-core)](https://www.npmjs.com/package/@julong/mono-rele2-core) | 시스템 유틸 MCP 서버 |
-| [`@julong/mono-rele2-utils`](./packages/utils) | [![npm](https://img.shields.io/npm/v/@julong/mono-rele2-utils)](https://www.npmjs.com/package/@julong/mono-rele2-utils) | 텍스트 유틸 MCP 서버 |
 
 ## 개발 환경
 
@@ -30,83 +22,9 @@ pnpm typecheck   # 전체 타입 검사
 pnpm clean       # 빌드 아웃풋 및 캐시 제거
 ```
 
-특정 패키지만 실행:
-
-```bash
-pnpm --filter @julong/mono-rele2-utils build
-pnpm --filter @julong/mono-rele2-core typecheck
-```
-
-## 새 패키지 추가
-
-```bash
-mkdir -p packages/my-pkg/src
-```
-
-`packages/my-pkg/package.json` 최소 구성:
-
-```json
-{
-  "name": "@julong/mono-rele2-my-pkg",
-  "version": "0.0.1",
-  "license": "ISC",
-  "type": "module",
-  "exports": {
-    ".": {
-      "import": "./src/index.ts",
-      "types": "./src/index.ts"
-    }
-  },
-  "publishConfig": { "access": "public" },
-  "scripts": {
-    "build": "tsc --build",
-    "typecheck": "tsc --noEmit",
-    "clean": "rimraf dist tsconfig.tsbuildinfo"
-  }
-}
-```
-
-이후 `pnpm install` 실행 시 workspace에 자동 등록됩니다.
-
 ## MCP 서버
 
 각 패키지는 [Model Context Protocol](https://modelcontextprotocol.io) 서버로 동작합니다. npm에 배포된 패키지를 `npx`로 바로 실행하거나, Claude Desktop / Cursor 등 MCP 클라이언트에 연결할 수 있습니다.
-
-### 제공 서버 및 Tool 목록
-
-#### `@julong/mono-rele2-core` — 시스템 유틸리티
-
-| Tool | 입력 | 설명 |
-|------|------|------|
-| `echo` | `message: string` | 메시지를 그대로 반환 |
-| `timestamp` | `format: 'iso' \| 'unix'` | 현재 UTC 시각 반환 |
-| `env` | `key: string` | 환경변수 값 반환 |
-
-#### `@julong/mono-rele2-utils` — 텍스트 유틸리티
-
-| Tool | 입력 | 설명 |
-|------|------|------|
-| `cn` | `classes: string[]` | 클래스명 병합 (falsy 값 제거) |
-| `case_convert` | `input: string`, `to: 'upper' \| 'lower' \| 'capitalize' \| 'camel' \| 'snake' \| 'kebab'` | 케이스 변환 |
-| `truncate` | `input: string`, `maxLength: number`, `suffix?: string` | 텍스트 잘라내기 |
-
----
-
-### npx로 직접 실행
-
-빌드된 패키지를 npx로 즉시 실행할 수 있습니다.
-
-```bash
-# core 서버 실행
-npx -y @julong/mono-rele2-core
-
-# utils 서버 실행
-npx -y @julong/mono-rele2-utils
-```
-
-> 서버는 stdio 기반으로 동작하며, 단독 실행 시 MCP 클라이언트의 연결을 기다립니다.
-
----
 
 ### Claude Desktop 연결
 
@@ -249,13 +167,6 @@ BREAKING CHANGE: cn function has been renamed to classNames"
 git commit -m "chore: update dependencies"
 git commit -m "docs: update README"
 ```
-
-### scope
-
-scope는 변경이 일어난 패키지 이름을 사용합니다:
-
-- `feat(core): ...` → `@julong/mono-rele2-core`에 새 기능
-- `fix(utils): ...` → `@julong/mono-rele2-utils` 버그 수정
 
 ## 릴리스
 
