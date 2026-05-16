@@ -1,0 +1,170 @@
+# 10. 프로젝트 전용 명령어
+
+> 모든 명령어는 루트 디렉토리(`/Users/julong/Documents/github/mcp-kit`)에서 실행합니다.
+> `pnpm`은 `9.12.1` 버전을 사용합니다.
+
+## 환경 설정
+
+```bash
+# Node.js 버전 설정 (.nvmrc 기준)
+nvm use
+
+# 의존성 설치
+pnpm install
+
+# 의존성 업데이트 (잠금 파일 기준)
+pnpm install --frozen-lockfile   # CI 환경
+```
+
+## 로컬 개발
+
+```bash
+# 전체 빌드 (Turborepo가 의존성 그래프 분석 후 최적 순서로 빌드)
+pnpm build
+
+# 특정 패키지만 빌드
+pnpm --filter @julong/mono-rele2-core build
+pnpm --filter @julong/mono-rele2-utils build
+
+# 개발 모드 (파일 변경 감시)
+pnpm dev                          # turbo run dev
+
+# 클린 빌드 (캐시 및 dist 제거)
+pnpm clean
+```
+
+## 타입 검사
+
+```bash
+# 전체 패키지 타입 검사
+pnpm typecheck
+
+# 특정 패키지만 타입 검사
+pnpm --filter @julong/mono-rele2-core typecheck
+pnpm --filter @julong/mono-rele2-utils typecheck
+```
+
+## 문서 생성
+
+```bash
+# 전체 패키지 README 업데이트 (bun 필요, build 불필요)
+pnpm readme
+
+# 특정 패키지만 README 업데이트
+pnpm --filter @julong/mono-rele2-core readme
+```
+
+## 테스트
+
+```bash
+# 전체 테스트 실행 (현재 테스트 미설정)
+pnpm test
+```
+
+> 참고: 현재 테스트 프레임워크가 설정되어 있지 않습니다. 테스트가 도입되면 이 명령어가 활성화됩니다.
+
+## 검증 (CI와 동일한 순서)
+
+```bash
+# 1. 타입 검사
+pnpm typecheck
+
+# 2. 빌드
+pnpm build
+
+# 3. 릴리스 드라이런
+pnpm exec multi-semantic-release --dry-run
+```
+
+## MCP 서버 실행
+
+```bash
+# npx로 직접 실행 (npm 배포 버전)
+npx @julong/mono-rele2-core
+npx @julong/mono-rele2-utils
+
+# 로컬 빌드 실행 (개발 중)
+node packages/core/dist/server.js
+node packages/utils/dist/server.js
+
+# MCP Inspector로 디버깅
+npx @modelcontextprotocol/inspector node packages/core/dist/server.js
+npx @modelcontextprotocol/inspector node packages/utils/dist/server.js
+```
+
+## CLI 도구 실행
+
+```bash
+# 도구 목록 보기
+npx @julong/mono-rele2-core-cli
+
+# 특정 도구 실행
+npx @julong/mono-rele2-core-cli echoTool "hello world"
+npx @julong/mono-rele2-core-cli timestampTool unix
+npx @julong/mono-rele2-core-cli envTool HOME
+npx @julong/mono-rele2-core-cli uuidTool
+
+# 로컬 빌드로 CLI 실행
+node packages/core/dist/cli.js echoTool "hello world"
+```
+
+## Git 커밋
+
+```bash
+# feat: 새로운 기능 (minor 릴리스)
+git commit -m "feat(scope): add new feature"
+
+# fix: 버그 수정 (patch 릴리스)
+git commit -m "fix(scope): resolve null reference"
+
+# BREAKING CHANGE (major 릴리스)
+git commit -m "feat(scope)!: rename public API
+"
+# 또는 footer에 BREAKING CHANGE 명시
+git commit -m "feat(scope): rename public API
+
+BREAKING CHANGE: oldName has been renamed to newName"
+
+# 문서/설정 변경 (릴리스 없음)
+git commit -m "docs: update README"
+git commit -m "chore: update dependencies"
+git commit -m "refactor(scope): restructure module"
+```
+
+## 패키지 배포
+
+```bash
+# 실제 릴리스 (main 브랜치에 push 시 GitHub Actions가 자동 실행)
+git push origin main
+
+# 수동 드라이런 (실제 배포 없이 결과 확인)
+pnpm exec multi-semantic-release --dry-run
+```
+
+## 번들 분석
+
+```bash
+# 빌드된 번들 내용 확인
+ls packages/core/dist/
+ls packages/utils/dist/
+
+# 생성된 스킬 문서 확인
+ls packages/core/dist/skills/
+ls packages/utils/dist/skills/
+```
+
+## 문제 해결
+
+```bash
+# Turbo 캐시 초기화
+rm -rf .turbo
+pnpm build --force
+
+# pnpm 저장소 문제
+pnpm store prune
+rm -rf node_modules
+pnpm install
+
+# 전체 클린
+pnpm clean && rm -rf node_modules .turbo && pnpm install && pnpm build
+```
