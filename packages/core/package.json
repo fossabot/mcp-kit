@@ -1,0 +1,33 @@
+{
+  "name": "@julong/mono-rele2-core",
+  "version": "1.17.0",
+  "description": "Use this skill to invoke core system utility functions via the mono-rele2-core CLI. Handles message echo, UTC timestamp generation, and environment variable lookup.",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "mono-rele2-core": "./dist/server.js",
+    "mono-rele2-core-cli": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "readme": "node ../common/build/update-readme.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.2"
+  }
+}

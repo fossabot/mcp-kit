@@ -1,0 +1,33 @@
+{
+  "name": "@julong/mono-rele2-utils",
+  "version": "1.17.0",
+  "description": "Use this skill to invoke text utility functions via the mono-rele2-utils CLI. Handles class name merging, case conversion, and text truncation.",
+  "license": "ISC",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "bin": {
+    "mono-rele2-utils": "./dist/server.js",
+    "mono-rele2-utils-cli": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist",
+    "readme": "node ../common/build/update-readme.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.2"
+  }
+}
