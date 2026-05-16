@@ -1,5 +1,5 @@
-import { readFileSync, writeFileSync, existsSync } from "node:fs";
-import { resolve } from "node:path";
+import { readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { generateReadmeSkills } from "../kit/skill.ts";
 
@@ -10,13 +10,9 @@ const pkgName = pkg.name;
 const pkgDesc = pkg.description;
 const binCli = `${pkgName.split("/").pop()}-cli`;
 
-const distPath = resolve("./dist/index.js");
-if (!existsSync(distPath)) {
-  console.error(`[update-readme] dist not found at ${distPath} — run build first`);
-  process.exit(1);
-}
+const toolsUrl = pathToFileURL(join(process.cwd(), "src/tools/index.ts")).href;
+const { tools } = await import(toolsUrl);
 
-const { tools } = await import(pathToFileURL(distPath).href);
 const skills = generateReadmeSkills({ binName: binCli, tools });
 
 const readme = `# ${pkgName}
