@@ -1,6 +1,6 @@
 # @julong/mono-rele2-utils
 
-Text utility tools for the mono-rele2 monorepo. Available as an MCP server and a standalone CLI.
+Use this skill to invoke text utility functions via the mono-rele2-utils CLI. Handles class name merging, case conversion, and text truncation.
 
 ## CLI
 
@@ -9,13 +9,13 @@ Text utility tools for the mono-rele2 monorepo. Available as an MCP server and a
 ```sh
 npm install -g @julong/mono-rele2-utils
 # or
-npx @julong/mono-rele2-utils-cli <skillName> [...args]
+npx @julong/mono-rele2-utils-cli <toolName> [...args]
 ```
 
 ### Usage
 
 ```sh
-mono-rele2-utils-cli <skillName> [...args]
+mono-rele2-utils-cli <toolName> [...args]
 ```
 
 Run without arguments to list all available skills:
@@ -24,19 +24,7 @@ Run without arguments to list all available skills:
 mono-rele2-utils-cli
 ```
 
-```
-Available skills:
-
-  caseConvertTool
-  Converts text to the specified case format
-    input    Text to convert
-    to       Target case format
-  ...
-```
-
 ### Skills
-
-<!-- SKILLS:START -->
 
 #### `cnTool`
 
@@ -91,8 +79,6 @@ mono-rele2-utils-cli truncateTool <input> <maxLength> [suffix]
 mono-rele2-utils-cli truncateTool "hello world long text" 10    # hello w...
 mono-rele2-utils-cli truncateTool "hello world" 8 "…"           # hello w…
 ```
-
-<!-- SKILLS:END -->
 
 ## MCP Server
 

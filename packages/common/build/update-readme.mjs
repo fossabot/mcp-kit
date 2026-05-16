@@ -3,12 +3,12 @@ import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { generateReadmeSkills } from "../kit/skill.ts";
 
-const START = "<!-- SKILLS:START -->";
-const END = "<!-- SKILLS:END -->";
 const README_PATH = "./README.md";
 
 const pkg = JSON.parse(readFileSync("./package.json", "utf-8"));
-const binName = `${pkg.name.split("/").pop()}-cli`;
+const pkgName = pkg.name;
+const pkgDesc = pkg.description;
+const binCli = `${pkgName.split("/").pop()}-cli`;
 
 const distPath = resolve("./dist/index.js");
 if (!existsSync(distPath)) {
@@ -17,14 +17,44 @@ if (!existsSync(distPath)) {
 }
 
 const { tools } = await import(pathToFileURL(distPath).href);
-const skills = generateReadmeSkills({ binName, tools });
+const skills = generateReadmeSkills({ binName: binCli, tools });
 
-const readme = readFileSync(README_PATH, "utf-8");
-const re = new RegExp(`(${START})[\\s\\S]*?(${END})`);
-if (!re.test(readme)) {
-  console.error(`[update-readme] markers not found in ${README_PATH} — add ${START} ... ${END}`);
-  process.exit(1);
-}
-const updated = readme.replace(re, `$1\n\n${skills}\n\n$2`);
+const readme = `# ${pkgName}
 
-writeFileSync(README_PATH, updated);
+${pkgDesc}
+
+## CLI
+
+### Installation
+
+\`\`\`sh
+npm install -g ${pkgName}
+# or
+npx ${pkgName}-cli <toolName> [...args]
+\`\`\`
+
+### Usage
+
+\`\`\`sh
+${binCli} <toolName> [...args]
+\`\`\`
+
+Run without arguments to list all available skills:
+
+\`\`\`sh
+${binCli}
+\`\`\`
+
+### Skills
+
+${skills}
+
+## MCP Server
+
+\`\`\`sh
+npx -y ${pkgName}
+\`\`\`
+`;
+
+writeFileSync(README_PATH, readme);
+console.log(`[update-readme] ${README_PATH} updated`);
