@@ -1,3 +1,13 @@
+## @julong/mono-rele2-utils [1.18.0](https://github.com/jl917/mcp-kit/compare/@julong/mono-rele2-utils@1.17.1...@julong/mono-rele2-utils@1.18.0) (2026-05-18)
+
+### Features
+
+* update common-update.md in core and utils [skip ci] ([c3b83dd](https://github.com/jl917/mcp-kit/commit/c3b83dd966cf00eea0fb0adf3c8c4e9dee8eb22f))
+
+### Bug Fixes
+
+* readme template 수정 ([6d1c7e6](https://github.com/jl917/mcp-kit/commit/6d1c7e67cd557a251f95fd115a68ced452865d25))
+
 ## @julong/mono-rele2-utils [1.17.1](https://github.com/jl917/mcp-kit/compare/@julong/mono-rele2-utils@1.17.0...@julong/mono-rele2-utils@1.17.1) (2026-05-16)
 
 ### Bug Fixes
