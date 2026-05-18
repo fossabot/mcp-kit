@@ -13,7 +13,7 @@ description: ${description}
 # ${binName}
 
 \`\`\`sh
-${binName} <skillName> [...args]
+${binName} <toolName> [...args]
 \`\`\`
 
 ## Skills

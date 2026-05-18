@@ -26,8 +26,8 @@
     "clean": {
       "cache": false
     },
-     "readme": {
-      "dependsOn": ["^build"]
+    "readme": {
+      "cache": false
     }
   }
 }

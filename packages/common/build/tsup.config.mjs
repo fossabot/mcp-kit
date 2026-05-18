@@ -15,6 +15,7 @@ export function createTsupConfig() {
     format: ["esm"],
     external: ["@modelcontextprotocol/sdk", "zod"],
     noExternal: [/^@julong\//, /^@common$/],
+    minify: true,
   };
 
   return defineConfig([

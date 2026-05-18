@@ -1,6 +1,6 @@
 # @julong/mono-rele2-core
 
-Core system utility tools for the mono-rele2 monorepo. Available as an MCP server and a standalone CLI.
+Use this skill to invoke core system utility functions via the mono-rele2-core CLI. Handles message echo, UTC timestamp generation, and environment variable lookup.
 
 ## CLI
 
@@ -9,13 +9,13 @@ Core system utility tools for the mono-rele2 monorepo. Available as an MCP serve
 ```sh
 npm install -g @julong/mono-rele2-core
 # or
-npx @julong/mono-rele2-core-cli <skillName> [...args]
+npx @julong/mono-rele2-core-cli <toolName> [...args]
 ```
 
 ### Usage
 
 ```sh
-mono-rele2-core-cli <skillName> [...args]
+mono-rele2-core-cli <toolName> [...args]
 ```
 
 Run without arguments to list all available skills:
@@ -24,18 +24,7 @@ Run without arguments to list all available skills:
 mono-rele2-core-cli
 ```
 
-```
-Available skills:
-
-  echoTool
-  Returns the message as-is
-    message  Message to echo
-  ...
-```
-
 ### Skills
-
-<!-- SKILLS:START -->
 
 #### `echoTool`
 
@@ -98,8 +87,6 @@ mono-rele2-core-cli uuidTool
 ```sh
 mono-rele2-core-cli uuidTool    # 550e8400-e29b-41d4-a716-446655440000
 ```
-
-<!-- SKILLS:END -->
 
 ## MCP Server
 
