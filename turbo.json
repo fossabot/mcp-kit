@@ -28,6 +28,13 @@
     },
     "readme": {
       "cache": false
+    },
+    "docs:dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "docs:build": {
+      "outputs": ["docs_build/**"]
     }
   }
 }
