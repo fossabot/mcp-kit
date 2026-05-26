@@ -1,3 +1,11 @@
+## @julong/mono-rele2-core [1.19.0](https://github.com/jl917/mcp-kit/compare/@julong/mono-rele2-core@1.18.0...@julong/mono-rele2-core@1.19.0) (2026-05-26)
+
+### Features
+
+* update common-update.md in core and utils [skip ci] ([76a31be](https://github.com/jl917/mcp-kit/commit/76a31be3d0baf3c5c0b76c85a1b10d29da84a3cb))
+* update common-update.md in core and utils [skip ci] ([b03d595](https://github.com/jl917/mcp-kit/commit/b03d5958959339714b09f7f6ef533e0cc5301f84))
+* **utils:** add object_flatten tool for recursive nested-object flattening ([e4ce8f0](https://github.com/jl917/mcp-kit/commit/e4ce8f0805647530c6961e72aba05332542637b3))
+
 ## @julong/mono-rele2-core [1.18.0](https://github.com/jl917/mcp-kit/compare/@julong/mono-rele2-core@1.17.1...@julong/mono-rele2-core@1.18.0) (2026-05-18)
 
 ### Features
