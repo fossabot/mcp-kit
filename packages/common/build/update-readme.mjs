@@ -13,7 +13,7 @@ const binCli = `${pkgName.split("/").pop()}-cli`;
 const toolsUrl = pathToFileURL(join(process.cwd(), "src/tools/index.ts")).href;
 const { tools } = await import(toolsUrl);
 
-const skills = generateReadmeSkills({ binName: binCli, tools });
+const toolsText = generateReadmeSkills({ binName: binCli, tools });
 
 const readme = `# ${pkgName}
 
@@ -35,15 +35,15 @@ npx ${pkgName}-cli <toolName> [...args]
 ${binCli} <toolName> [...args]
 \`\`\`
 
-Run without arguments to list all available skills:
+Run without arguments to list all available tools:
 
 \`\`\`sh
 ${binCli}
 \`\`\`
 
-### Skills
+### Tools
 
-${skills}
+${toolsText}
 
 ## MCP Server
 

@@ -107,6 +107,9 @@ dist
 # Docusaurus cache and generated files
 .docusaurus
 
+# Rspress build output
+doc_build/
+
 # Serverless directories
 .serverless/
 
@@ -148,3 +151,5 @@ vite.config.ts.timestamp-*
 .claude/settings.local.json
 
 .sisyphus
+.firecrawl
+.omo

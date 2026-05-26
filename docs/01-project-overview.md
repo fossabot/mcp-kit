@@ -12,15 +12,11 @@
 
 ## 핵심 기능
 
-| 패키지 | 제공 도구 | 설명 |
-|--------|----------|------|
-| `@julong/mono-rele2-core` | echoTool, timestampTool, envTool, uuidTool | 메시지 에코, UTC 타임스탬프, 환경변수 조회, UUID 생성 |
-| `@julong/mono-rele2-utils` | cnTool, caseConvertTool, truncateTool | 클래스명 병합, 케이스 변환, 텍스트 자르기 |
 
 각 패키지는 다음 세 가지 인터페이스를 제공합니다:
-- **라이브러리 API**: `import { tools } from "@julong/mono-rele2-core"` 형태로 Node.js 코드에서 직접 사용
-- **MCP 서버**: `npx @julong/mono-rele2-core`로 stdio 기반 MCP 서버 실행
-- **CLI**: `npx @julong/mono-rele2-core-cli <toolName> [args]`로 터미널에서 직접 도구 호출
+- **라이브러리 API**: `import { tools } from "{package.name}"` 형태로 Node.js 코드에서 직접 사용
+- **MCP 서버**: `npx {package.name}`로 stdio 기반 MCP 서버 실행
+- **CLI**: `npx {package.name}-cli <toolName> [args]`로 터미널에서 직접 도구 호출
 
 ## 향후 개선 방향
 

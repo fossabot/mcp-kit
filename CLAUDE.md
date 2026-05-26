@@ -1,4 +1,4 @@
-# mcp-kit
+# MCP-Kit
 
 pnpm + Turborepo 기반 MCP(Model Context Protocol) 서버 모노레포.
 
