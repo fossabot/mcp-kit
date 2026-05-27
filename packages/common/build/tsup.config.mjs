@@ -3,7 +3,6 @@ import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 
-// This file defines the tsup configuration for building the common package, which includes both the main library and the CLI tool. It also generates skill markdown files based on the tools defined in the package.
 export function createTsupConfig() {
   const pkg = JSON.parse(readFileSync("./package.json", "utf-8"));
   const cliBin = Object.entries(pkg.bin ?? {}).find(([, v]) => String(v).endsWith("cli.js"))?.[0];

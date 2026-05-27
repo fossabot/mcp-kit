@@ -9,6 +9,7 @@
   },
   "devDependencies": {
     "@rspress/core": "^2.0.12",
-    "@rspress/plugin-llms": "^2.0.12"
+    "@rspress/plugin-llms": "^2.0.12",
+    "netlify-cli": "^26.0.2"
   }
 }
