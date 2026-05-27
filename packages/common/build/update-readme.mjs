@@ -3,7 +3,6 @@ import { join } from "node:path";
 import { pathToFileURL } from "node:url";
 import { generateReadmeApiDocs } from "../kit/skill.ts";
 
-// this
 const pkg = JSON.parse(readFileSync("./package.json", "utf-8"));
 const pkgName = pkg.name;
 const pkgDesc = pkg.description;
