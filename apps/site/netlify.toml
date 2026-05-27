@@ -1,0 +1,3 @@
+[build]
+  command = "pnpm docs:build --filter=@julong/mcp-kit-site"
+  publish = "doc_build"
