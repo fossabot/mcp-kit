@@ -83,12 +83,12 @@ jobs:
           GIT_COMMITTER_EMAIL: github-actions[bot]@users.noreply.github.com
 
       - name: Build docs
-        run: pnpm docs:build
+        run: pnpm docs:build --filter=@julong/mcp-kit-site
 
       - name: Deploy to Netlify
         run: |
           npx netlify deploy \
-            --dir=doc_build \
+            --dir=apps/site/doc_build \
             --prod \
             --site=${{ secrets.NETLIFY_SITE_ID }}
         env:

@@ -17,7 +17,8 @@ interface PackageMeta {
  * auto-populates nav/sidebar, and generates the /packages overview page.
  */
 export function packageDocsPlugin(): RspressPlugin {
-  const packagesDir = join(process.cwd(), 'packages');
+  // When running from apps/site/, packages/ is at ../../packages
+  const packagesDir = join(process.cwd(), '..', '..', 'packages');
 
   function getPackages(): PackageInfo[] {
     const entries = readdirSync(packagesDir, { withFileTypes: true });

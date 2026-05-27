@@ -1,6 +1,7 @@
 import { z } from "zod";
 import type { ToolResult } from "./tool.js";
 
+/// A simple CLI framework for defining and running tools with structured input and output.
 type CliTools = Record<
   string,
   {

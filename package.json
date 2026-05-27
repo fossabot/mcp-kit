@@ -14,12 +14,10 @@
     "clean": "turbo run clean && rimraf node_modules",
     "release": "multi-semantic-release",
     "readme": "turbo run readme --parallel",
-    "docs:dev": "rspress dev",
-    "docs:build": "rspress build"
+    "docs:dev": "turbo run docs:dev",
+    "docs:build": "turbo run docs:build"
   },
   "devDependencies": {
-    "@rspress/core": "^2.0.12",
-    "@rspress/plugin-llms": "^2.0.12",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/git": "^10.0.1",

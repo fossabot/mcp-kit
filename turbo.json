@@ -34,7 +34,7 @@
       "persistent": true
     },
     "docs:build": {
-      "outputs": ["docs_build/**"]
+      "outputs": ["doc_build/**"]
     }
   }
 }
