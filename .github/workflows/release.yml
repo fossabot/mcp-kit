@@ -94,4 +94,5 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_TO_PROD: true
           build_directory: doc_build
-          build_command: pnpm docs:build
+          install_command: "echo Skipping installing the dependencies"
+          build_command: "echo Skipping building the web files"
