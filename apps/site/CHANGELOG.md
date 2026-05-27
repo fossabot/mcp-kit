@@ -1,3 +1,9 @@
+## @julong/mcp-kit-site [1.1.0](https://github.com/jl917/mcp-kit/compare/@julong/mcp-kit-site@1.0.0...@julong/mcp-kit-site@1.1.0) (2026-05-27)
+
+### Features
+
+* 빌드 체크 ([09b2260](https://github.com/jl917/mcp-kit/commit/09b2260249d6eb644d46470b46390042ca6bb669))
+
 ## @julong/mcp-kit-site 1.0.0 (2026-05-27)
 
 ### Features
