@@ -26,4 +26,3 @@ git commit -m "<message>"
 git push
 ```
 
-> Reasonix Code 에이전트가 이 순서를 자동으로 수행합니다.
