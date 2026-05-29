@@ -54,31 +54,26 @@ mono-rele2-core-cli
 **Signature**
 
 ```typescript
-function echo(message: string): string
+function echo(message: string): string;
 ```
 
 Returns the message as-is.
 
-
 **Parameters**
 
-| Name | Type | Description |
-|------|------|-------------|
+| Name      | Type     | Description     |
+| --------- | -------- | --------------- |
 | `message` | `string` | Message to echo |
-
 
 **Returns**
 
 `string`
-
 
 **CLI**
 
 ```sh
 mono-rele2-core-cli echoTool <message>
 ```
-
-
 
 **Examples**
 
@@ -97,18 +92,15 @@ function timestamp(format?: `iso` \| `unix`): string
 
 Returns the current UTC timestamp.
 
-
 **Parameters**
 
-| Name | Type | Description |
-|------|------|-------------|
+| Name     | Type              | Description                       |
+| -------- | ----------------- | --------------------------------- |
 | `format` | ``iso` \| `unix`` | Timestamp format (default: `iso`) |
-
 
 **Returns**
 
 `string`
-
 
 **CLI**
 
@@ -116,14 +108,13 @@ Returns the current UTC timestamp.
 mono-rele2-core-cli timestampTool [format]
 ```
 
-
-
 **Examples**
 
 ```sh
 mono-rele2-core-cli timestampTool
 # → 2026-05-02T00:00:00.000Z
 ```
+
 ```sh
 mono-rele2-core-cli timestampTool unix
 # → 1746144000000
@@ -134,23 +125,20 @@ mono-rele2-core-cli timestampTool unix
 **Signature**
 
 ```typescript
-function env(key: string): string
+function env(key: string): string;
 ```
 
 Returns the value of an environment variable.
 
-
 **Parameters**
 
-| Name | Type | Description |
-|------|------|-------------|
+| Name  | Type     | Description               |
+| ----- | -------- | ------------------------- |
 | `key` | `string` | Environment variable name |
-
 
 **Returns**
 
 `string`
-
 
 **CLI**
 
@@ -158,14 +146,13 @@ Returns the value of an environment variable.
 mono-rele2-core-cli envTool <key>
 ```
 
-
-
 **Examples**
 
 ```sh
 mono-rele2-core-cli envTool HOME
 # → /Users/julong
 ```
+
 ```sh
 mono-rele2-core-cli envTool NODE_ENV
 # → development
@@ -176,25 +163,20 @@ mono-rele2-core-cli envTool NODE_ENV
 **Signature**
 
 ```typescript
-function uuid(): string
+function uuid(): string;
 ```
 
 Generates a random UUID v4.
 
-
-
 **Returns**
 
 `string`
-
 
 **CLI**
 
 ```sh
 mono-rele2-core-cli uuidTool
 ```
-
-
 
 **Examples**
 
