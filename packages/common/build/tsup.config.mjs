@@ -37,10 +37,12 @@ export function createTsupConfig() {
         mkdirSync(skillDir, { recursive: true });
         writeFileSync(skillFile, content);
         console.log(`Skills generated: ${skillFile}`);
-        execSync("bun ../common/build/update-readme.mjs", {
-          cwd: resolve("."),
-          stdio: "inherit",
-        });
+        if (process.env.npm_lifecycle_event === "dev") {
+          execSync("bun ../common/build/update-readme.mjs", {
+            cwd: resolve("."),
+            stdio: "inherit",
+          });
+        }
       },
     },
     {
