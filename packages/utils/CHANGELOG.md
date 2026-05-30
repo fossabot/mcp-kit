@@ -1,3 +1,10 @@
+## @julong/mono-rele2-utils [1.32.0](https://github.com/jl917/mcp-kit/compare/@julong/mono-rele2-utils@1.31.1...@julong/mono-rele2-utils@1.32.0) (2026-05-30)
+
+### Features
+
+* move skills to packages/{dir}/skills/, add Skill Installation section to README, pin branch to main ([f5c1df8](https://github.com/jl917/mcp-kit/commit/f5c1df803cb25449e8318b81325d01530a722229))
+* update common-update.md in core and utils [skip ci] ([52c193e](https://github.com/jl917/mcp-kit/commit/52c193e43853cbcf993067cbbbb8e757aa1a3bd9))
+
 ## @julong/mono-rele2-utils [1.31.1](https://github.com/jl917/mcp-kit/compare/@julong/mono-rele2-utils@1.31.0...@julong/mono-rele2-utils@1.31.1) (2026-05-29)
 
 ### Bug Fixes
