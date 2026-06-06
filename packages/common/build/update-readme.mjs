@@ -95,3 +95,4 @@ ${toolsText}
 
 writeFileSync("./README.md", readme);
 console.log(`[update-readme] ./README.md updated`);
+// For CI/CD, also update the README in the root for better visibility

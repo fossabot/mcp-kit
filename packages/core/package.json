@@ -31,7 +31,7 @@
     "format:check": "prettier --check src/ --check '*.{ts,json,js}'",
     "readme": "bun ../common/build/update-readme.mjs"
   },
-  "dependencies": {
+  "devDependencies": {
     "@modelcontextprotocol/sdk": "^1.29.0",
     "zod": "^4.4.2"
   }
