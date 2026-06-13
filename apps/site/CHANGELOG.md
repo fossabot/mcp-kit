@@ -1,3 +1,13 @@
+## @julong/mcp-kit-site [1.3.0](https://github.com/jl917/mcp-kit/compare/@julong/mcp-kit-site@1.2.0...@julong/mcp-kit-site@1.3.0) (2026-06-13)
+
+### Features
+
+* rspress 다국어(i18n) 지원 — 한국어/영어 ([8a894de](https://github.com/jl917/mcp-kit/commit/8a894de2c0104a02264ca25ca9eecab2c9dde7b7))
+
+### Bug Fixes
+
+* packages 개요 페이지 영어로 변경 ([608dd23](https://github.com/jl917/mcp-kit/commit/608dd232ccdc14fefa31ca671b5af3208eb957ae))
+
 ## @julong/mcp-kit-site [1.2.0](https://github.com/jl917/mcp-kit/compare/@julong/mcp-kit-site@1.1.0...@julong/mcp-kit-site@1.2.0) (2026-05-27)
 
 ### Features
