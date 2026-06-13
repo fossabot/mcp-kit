@@ -76,7 +76,7 @@ export function packageDocsPlugin(): RspressPlugin {
       })
       .join('\n');
 
-    return `# Packages\n\nmcp-kit 모노레포는 다음 패키지들로 구성되어 있습니다.\n\n## 패키지 목록\n\n| 패키지 | 버전 | 설명 |\n|--------|------|------|\n${rows}\n\n각 패키지는 독립적인 MCP 서버로 동작하며, CLI 도구와 MCP 서버 인터페이스를 동시에 제공합니다.`;
+    return `# Packages\n\nThe mcp-kit monorepo consists of the following packages.\n\n## Package List\n\n| Package | Version | Description |\n|---------|---------|-------------|\n${rows}\n\nEach package runs as an independent MCP server, providing both CLI tools and an MCP server interface.`;
   }
 
   return {
