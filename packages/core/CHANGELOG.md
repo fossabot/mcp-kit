@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.38.0](https://github.com/jl917/mcp-kit/compare/mono-rele2-core-1.37.0...mono-rele2-core-1.38.0) (2026-06-25)
+
+
+### Features
+
+* update common-update.md in core and utils [skip ci] ([55c3833](https://github.com/jl917/mcp-kit/commit/55c3833f97db7919817e5bf18de7961d3676f081))
+
 ## [1.37.0](https://github.com/jl917/mcp-kit/compare/mono-rele2-core-1.36.0...mono-rele2-core-1.37.0) (2026-06-25)
 
 
