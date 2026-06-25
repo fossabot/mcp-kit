@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.37.0](https://github.com/jl917/mcp-kit/compare/mono-rele2-core-1.36.0...mono-rele2-core-1.37.0) (2026-06-25)
+
+
+### Features
+
+* update common-update.md in core and utils [skip ci] ([a96c305](https://github.com/jl917/mcp-kit/commit/a96c305001142ae908e2f6eea2610b49e0fb466a))
+
+
+### Bug Fixes
+
+* 마크다운 테이블 셀의 파이프(|) 이스케이프 처리 ([78aa4bf](https://github.com/jl917/mcp-kit/commit/78aa4bf6fc2a7ef324dd09508b0134bbb6bff8c3))
+
 ## [1.36.0](https://github.com/jl917/mcp-kit/compare/mono-rele2-core-1.35.0...mono-rele2-core-1.36.0) (2026-06-25)
 
 
