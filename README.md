@@ -1,4 +1,6 @@
 # mcp-kit
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjl917%2Fmcp-kit.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjl917%2Fmcp-kit?ref=badge_shield)
+
 
 pnpm + Turborepo 기반 모노레포. 각 패키지는 release-please를 통해 독립적으로 npm에 배포됩니다.
 
@@ -194,3 +196,7 @@ git commit -m "docs: update README"
 |-----------|--------|------|
 | `ci.yml` | PR 및 main push | 타입 검사 + 빌드 검증 |
 | `release.yml` | main push | release-please 릴리스 PR 관리 → 머지 시 태그/GitHub Release/npm 배포 |
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjl917%2Fmcp-kit.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjl917%2Fmcp-kit?ref=badge_large)
